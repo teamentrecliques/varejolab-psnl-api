@@ -6,8 +6,8 @@ module.exports = {
   },
   extends: [
     'standard',
-    'prettier/@typescript-eslint',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint'
   ],
   globals: {
     Atomics: 'readonly',
