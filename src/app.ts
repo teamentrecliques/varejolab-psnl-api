@@ -26,13 +26,13 @@ class App {
 
     if (AppConfig.env === 'development') this.app.use(logger('dev'))
 
-    // Coonect to MongoDB
-    Mongoose.connect()
-
     this.app.use('/api', ApiRouter)
   }
 
   public listen(): void {
+    // Connecting to MongoDB
+    Mongoose.connect()
+
     // ==> Showing API running infos
     console.log('')
     console.log('[API] ONLINE!')
