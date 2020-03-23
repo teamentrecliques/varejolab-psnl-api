@@ -6,4 +6,5 @@ dotenv.config({ path: Config.envPath })
 
 export { Config as app }
 export { default as api } from './api.config'
+export { default as mailer } from './mailer.config'
 export { default as mongoose } from './mongoose.config'
