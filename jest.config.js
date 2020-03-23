@@ -1,6 +1,9 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path')
+
 module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -24,7 +27,7 @@ module.exports = {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -132,7 +135,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  testEnvironment: 'node',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -167,7 +170,18 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  transform: { '^.+\\.tsx?$': 'ts-jest' },
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.ts$',
+  testPathIgnorePatterns: ['/node_modules/'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleNameMapper: {
+    '@config': path.resolve(__dirname, 'src', 'Configs', 'index.ts'),
+    '@controllers': path.resolve(__dirname, 'src', 'Controllers', 'index.ts'),
+    '@functions': path.resolve(__dirname, 'src', 'Functions', 'index.ts'),
+    '@models': path.resolve(__dirname, 'src', 'Models', 'index.ts'),
+    '@router': path.resolve(__dirname, 'src', 'Router', 'index.ts'),
+    '@utils': path.resolve(__dirname, 'src', 'Utils', 'index.ts')
+  }
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
@@ -185,4 +199,4 @@ module.exports = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
