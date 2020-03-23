@@ -44,6 +44,11 @@ const notFound = (
   payload: string | Record<string, any>
 ): Response => handleError(res, 404, payload)
 
+const conflict = (
+  res: Response,
+  payload: string | Record<string, any>
+): Response => handleError(res, 409, payload)
+
 // ==> 500
 const internalError = (res: Response, payload: Record<string, any>): Response =>
   handleError(res, 500, payload)
@@ -58,6 +63,7 @@ export default {
   forbidden,
   notFound,
   unauthorized,
+  conflict,
 
   // ==> 500
   internalError
