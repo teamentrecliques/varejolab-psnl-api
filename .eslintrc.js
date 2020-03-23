@@ -2,6 +2,7 @@ module.exports = {
   parser: '@typesscript-eslint/parser',
   env: {
     es6: true,
+    jest: true,
     node: true
   },
   extends: [
