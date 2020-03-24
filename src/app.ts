@@ -4,10 +4,10 @@ import express, { Application } from 'express'
 import helmet from 'helmet'
 import logger from 'morgan'
 
-import { api as ApiConfig, app as AppConfig } from '@config'
-import { Mongoose } from '@functions'
+import { api as ApiConfig, app as AppConfig } from './Configs'
+import { Mongoose } from './Functions'
 
-import ApiRouter from '@router'
+import ApiRouter from './Router'
 
 class App {
   public app: Application

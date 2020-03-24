@@ -1,6 +1,6 @@
 import Mongoose from 'mongoose'
 
-import { mongoose as Config } from '@config'
+import { mongoose as Config } from '../Configs'
 
 function connect(): void {
   // ==> Create connection listeners

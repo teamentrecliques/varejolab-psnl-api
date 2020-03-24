@@ -1,9 +1,9 @@
 import * as Yup from 'yup'
 import { Request, Response } from 'express'
 
-import { Mailer } from '@functions'
-import { Subscription } from '@models'
-import { $response } from '@utils'
+import { Mailer } from '../Functions'
+import { Subscription } from '../Models'
+import { $response } from '../Utils'
 
 const create = async (req: Request, res: Response): Promise<Response> => {
   const schema = Yup.object().shape({
@@ -29,7 +29,7 @@ const create = async (req: Request, res: Response): Promise<Response> => {
 
   const [created] = await Promise.all([
     Subscription.create(payload),
-    Mailer.sentContentInfo(payload.email, { name: payload.name })
+    Mailer.sentContentInfo(payload.email)
   ])
 
   return $response.created(res, created)

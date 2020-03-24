@@ -1,6 +1,6 @@
 import { Router as ExpressRouter } from 'express'
 
-import { root as RootController } from '@controllers'
+import { root as RootController } from '../../Controllers'
 
 const Router = ExpressRouter()
 

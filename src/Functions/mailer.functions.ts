@@ -1,7 +1,7 @@
 import nodemailer, { SentMessageInfo } from 'nodemailer'
 
-import { mailer as config } from '@config'
-import { Template } from '@functions'
+import { mailer as config } from '../Configs'
+import Template from './template.functions'
 
 const transporter = nodemailer.createTransport(config.smtpConfig)
 
@@ -29,11 +29,8 @@ const _shoot = ({
   return transporter.sendMail(message)
 }
 
-const sentContentInfo = async (
-  to: string,
-  context: { name: string }
-): Promise<Function> => {
-  const { html, text } = await Template.get({ template: 'content', context })
+const sentContentInfo = async (to: string): Promise<Function> => {
+  const { html, text } = await Template.get({ template: 'content' })
   const subject = 'Seu acesso está bloqueado!'
 
   return _shoot({ subject, html, to, text })

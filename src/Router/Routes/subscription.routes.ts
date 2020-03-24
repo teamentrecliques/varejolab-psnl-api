@@ -1,6 +1,6 @@
 import { Router as ExpressRouter } from 'express'
 
-import { subscription } from '@controllers'
+import { subscription } from '../../Controllers'
 
 const Router = ExpressRouter()
 
