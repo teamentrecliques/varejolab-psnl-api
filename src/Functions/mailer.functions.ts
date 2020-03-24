@@ -31,7 +31,7 @@ const _shoot = ({
 
 const sentContentInfo = async (to: string): Promise<Function> => {
   const { html, text } = await Template.get({ template: 'content' })
-  const subject = 'Seu acesso está bloqueado!'
+  const subject = 'O Plano de Sobrevivência Chegou'
 
   return _shoot({ subject, html, to, text })
 }
