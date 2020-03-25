@@ -4,11 +4,7 @@ import path from 'path'
 
 import { promisify } from 'util'
 
-const { NODE_ENV: mode = 'development' } = process.env
-let baseTemplatePath = path.resolve(__dirname, '..', 'Templates')
-if (mode === 'production') {
-  baseTemplatePath = path.resolve(__dirname, '..', '..', 'src', 'Templates')
-}
+const baseTemplatePath = path.resolve(__dirname, '..', 'Templates')
 
 interface GetTempalteParams {
   template: string
