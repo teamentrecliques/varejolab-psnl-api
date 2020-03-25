@@ -38,7 +38,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': [
       'warn',
-      { devDependencies: ['**/*.spec.ts'] }
+      { devDependencies: ['**/*.spec.ts', 'gulpfile.js'] }
     ],
     'prettier/prettier': 'error'
   }
