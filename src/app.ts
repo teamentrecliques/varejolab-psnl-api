@@ -4,8 +4,8 @@ import express, { Application } from 'express'
 import helmet from 'helmet'
 import logger from 'morgan'
 
-import { api as ApiConfig, app as AppConfig } from './Configs'
-import { Mongoose } from './Functions'
+import { api as ApiConfig, app as AppConfig } from '@config'
+import { Mongoose } from '@functions'
 
 import ApiRouter from './Router'
 
