@@ -74,9 +74,7 @@ describe('Subscription Controller', () => {
 
       await $http.post(basePath).send(payload)
 
-      expect(mailerSpy).toHaveBeenCalledWith(payload.email, {
-        name: payload.name
-      })
+      expect(mailerSpy).toHaveBeenCalledWith(payload.email)
     })
   })
 })
