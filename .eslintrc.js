@@ -33,12 +33,12 @@ module.exports = {
     'import/extensions': [
       'error',
       'ignorePackages',
-      { js: 'never', ts: 'never', tsx: 'never' }
+      { js: 'never', ts: 'never' }
     ],
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': [
       'warn',
-      { devDependencies: ['**/*.test.js', '**/*.spec.js', '**/*.stories.js'] }
+      { devDependencies: ['**/*.spec.ts'] }
     ],
     'prettier/prettier': 'error'
   }
