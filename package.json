@@ -25,6 +25,7 @@
     "@babel/preset-typescript": "^7.9.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@types/axios": "^0.14.0",
     "@types/compression": "^1.7.0",
     "@types/cors": "^2.8.6",
     "@types/dotenv": "^8.2.0",
@@ -68,6 +69,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
