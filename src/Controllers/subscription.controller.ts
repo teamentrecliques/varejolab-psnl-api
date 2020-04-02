@@ -1,7 +1,7 @@
 import * as Yup from 'yup'
 import { Request, Response } from 'express'
 
-import { Mailer } from '../Functions'
+import { Mailer, Mautic } from '../Functions'
 import { Subscription } from '../Models'
 import { $response } from '../Utils'
 
@@ -14,6 +14,7 @@ const create = async (req: Request, res: Response): Promise<Response> => {
     phone: Yup.string().required()
   })
   const { body: payload } = req
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
 
   const isSchemaValid = await schema.isValid(payload)
   if (!isSchemaValid) {
@@ -32,6 +33,7 @@ const create = async (req: Request, res: Response): Promise<Response> => {
     Mailer.sentContentInfo(payload.email)
   ])
 
+  Mautic.createContact({ ...payload, ip })
   return $response.created(res, created)
 }
 
