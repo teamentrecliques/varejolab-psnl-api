@@ -6,8 +6,8 @@
   "scripts": {
     "build": "yarn gulp default",
     "dev": "nodemon src/server.ts",
-    "postinstall": "npm run build",
-    "start": "node -r ts-node/register -r tsconfig-paths/register dist/server.js",
+    "up": "node -r ts-node/register -r tsconfig-paths/register dist/server.js",
+    "start": "npm run build && npm run up",
     "test": "jest --detectOpenHandles",
     "test:notify": "npm run test -- --notify",
     "test:tdd": "npm run test --"
