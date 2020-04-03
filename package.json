@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "license": "MIT",
+  "engines": {
+    "node": "13.8.0",
+    "npm": "6.13.6",
+    "yarn": "1.22.4"
+  },
   "scripts": {
     "build": "yarn gulp default",
     "dev": "nodemon src/server.ts",
