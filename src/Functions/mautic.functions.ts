@@ -28,8 +28,13 @@ const createContact = (
     ...payload,
     firstname,
     lastname,
+
+    lastActive: new Date(),
     overwriteWithBlank: true,
-    lastActive: new Date()
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    preferred_locale: 'pt_BR',
+    sourceapi: 'PSNL API',
+    timezone: 'America/Sao_Paulo'
   }
 
   return $mautic.post('/contacts/new', contact)
