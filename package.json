@@ -69,7 +69,7 @@
     "@types/nodemailer": "^6.4.0",
     "@types/supertest": "^2.0.8",
     "@types/yup": "^0.26.33",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
